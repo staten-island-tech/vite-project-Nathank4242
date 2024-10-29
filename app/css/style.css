@@ -1,0 +1,38 @@
+html, body, *{
+  margin, padding: 0;
+  box-sizing: border-box;
+  font-size:10px;
+}
+
+:root{
+  --light-blue: #2998ff;
+  --dark-blue: #135cc5;
+
+  --primary: var(--light-blue);
+  --secondary: #135cc5;
+
+  --light-red: #f87171
+  --dark-red: #dc2626
+
+  --h1: 7.594rem
+  --h2: 5rem
+  --h3: 3rem
+ --h4: 2rem
+  --h5: 1rem
+
+}
+h1{
+  font-size: var(--h1);
+}
+
+body{
+  background-color:var(--primary)
+}
+
+.warm{
+  --primary: var(var(--light-red))
+}
+
+.cool{
+  --primary: var(--light-blue)
+}

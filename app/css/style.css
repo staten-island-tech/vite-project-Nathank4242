@@ -8,21 +8,36 @@ html, body, *{
   --light-blue: #2998ff;
   --dark-blue: #135cc5;
 
+  --light-red: #f87171;
+  --dark-red: #dc2626;
+  
   --primary: var(--light-blue);
-  --secondary: #135cc5;
+  --secondary: var(--dark-blue);
 
-  --light-red: #f87171
-  --dark-red: #dc2626
-
-  --h1: 7.594rem
-  --h2: 5rem
-  --h3: 3rem
- --h4: 2rem
-  --h5: 1rem
+  --h1: 7.594rem;
+  --h2: 5rem;
+  --h3: 3rem;
+ --h4: 2rem;
+  --h5: 1rem;
 
 }
+
+.hero{
+  background-color:var(--primary);
+}
+.app{
+  background-color:var(--secondary);
+}
+
 h1{
   font-size: var(--h1);
+  text-align: center;
+}
+h2{
+  font-size: var(--h2);
+}
+h3{
+  font-size: var(--h3);
 }
 
 body{
@@ -30,9 +45,20 @@ body{
 }
 
 .warm{
-  --primary: var(var(--light-red))
+  --primary:var(--light-red);
+  --secondary:var(--dark-red);
 }
 
 .cool{
-  --primary: var(--light-blue)
+  --primary: var(--light-blue);
+  --secondary:var(--dark-blue));
+}
+
+.btn{
+  font-size: 60px;
+  border-radius:8px;
+  border: 8px solid;
+  width: 250px;
+  height:250px;
+  cursor: pointer;
 }

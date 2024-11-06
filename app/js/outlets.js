@@ -1,4 +1,4 @@
-const outlets = [
+export const outlets = [
   {
     name: "SuperPower Outlet",
     watts: 1800,
@@ -168,20 +168,3 @@ const outlets = [
     alt: "SurgeGuard outlet with protective features",
   },
 ];
-
-const outletContainer = document.getElementById("outlet-container");
-
-outlets.forEach((outlet) => {
-  const card = document.createElement("div");
-  card.classList.add("card");
-
-  card.innerHTML = `
-        <img src="${outlet.image || "placeholder.jpg"}" alt="${outlet.alt}">
-        <h2>${outlet.name}</h2>
-        <p>Watts: ${outlet.watts}</p>
-        <p>Price: $${outlet.price.toFixed(2)}</p>
-        <p>Company: ${outlet.company}</p>
-    `;
-
-  outletContainer.appendChild(card);
-});

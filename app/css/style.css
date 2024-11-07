@@ -87,7 +87,7 @@ body{
 }
 
 
-.card-price {
+.card-tier {
   font-size: 18px;
   font-weight: bold;
   color: #ff0000;
@@ -100,7 +100,7 @@ body{
   color: #ff0000;
 }
 
-.card-company{
+.card-origin{
   font-size: 18px;
   font-weight: bold;
   color: #ff0000;

@@ -1,4 +1,4 @@
-import { outlets } from "./outlets.js";
+import { melee } from "./melee.js";
 
 document.querySelector(".btn").addEventListener("click", function () {
   if (document.body.classList.contains("cool")) {
@@ -13,15 +13,15 @@ document.querySelector(".btn").addEventListener("click", function () {
 function createCards() {
   const container = document.querySelector(".container");
 
-  outlets.forEach((outlet) => {
+  melee.forEach((melee) => {
     const cardHTML = `
       <div class="card">
-        <h2 class=card-name>${outlet.name}</h2>
-        <img src="${outlet.image || "placeholder-image.jpg"}" alt="${
-      outlet.alt
+        <h2 class=card-name>${melee.name}</h2>
+        <img src="${melee.image || "placeholder-image.jpg"}" alt="${
+      melee.alt_text
     }">
-        <h2 class= "card-company">${outlet.company}</h2>
-        <h2 class="card-price">${outlet.price}</h2>
+        <h2 class= "card-origin">${melee.game_of_origin}</h2>
+        <h2 class="card-tier">${melee.tier}</h2>
       </div>
     `;
     container.insertAdjacentHTML("beforeend", cardHTML);
@@ -29,3 +29,5 @@ function createCards() {
 }
 
 createCards();
+
+melee.filter((melee) => melee.game_of_origin.includes("Pokemon"));

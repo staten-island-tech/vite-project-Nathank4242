@@ -72,11 +72,11 @@ body{
 }
 
 .card {
-  border: 1px solid #ddd;
+  border: 1rem solid #000000;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: white;
+  background-color: #071a2a;
 }
 
 
@@ -90,19 +90,19 @@ body{
 .card-tier {
   font-size: 18px;
   font-weight: bold;
-  color: #ff0000;
+  color: #1ad4aa;
 }
 
 
 .card-name{
   font-size: 18px;
   font-weight: bold;
-  color: #ff0000;
+  color: #1ad4aa;
 }
 
 .card-origin{
   font-size: 18px;
   font-weight: bold;
-  color: #ff0000;
+  color: #1ad4aa;
 
 }

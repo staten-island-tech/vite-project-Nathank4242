@@ -74,3 +74,11 @@ function filterOtherCharacters() {
 document
   .getElementById("filterOtherButton")
   .addEventListener("click", filterOtherCharacters);
+
+function filterNoneCharacters() {
+  const NoneCharacters = melee;
+  createCards(NoneCharacters);
+}
+document
+  .getElementById("filterNoneButton")
+  .addEventListener("click", filterNoneCharacters);

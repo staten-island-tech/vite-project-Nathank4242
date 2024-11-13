@@ -6,10 +6,12 @@ html, body, *{
 
 :root{
   --light-blue: #2998ff;
-  --dark-blue: #135cc5;
+  --dark-blue: 		#034569;
+  --light-blue2 : #3c9dd0;
 
   --light-red: #f87171;
   --dark-red: #dc2626;
+  --light-red2: #FE9135;
   
   --primary: var(--light-blue);
   --secondary: var(--dark-blue);
@@ -47,11 +49,16 @@ body{
 .warm{
   --primary:var(--light-red);
   --secondary:var(--dark-red);
+  --primary2:var(--light-red2)
 }
 
 .cool{
   --primary: var(--light-blue);
-  --secondary:var(--dark-blue));
+  --secondary:var(--dark-blue);
+  --primary2 : (var(--light-blue2))
+  --secondary2: var(--dark-blue)
+  
+
 }
 
 .btn{
@@ -62,6 +69,8 @@ body{
   height:50px;
   cursor: pointer;
 }
+
+
 
 
 .container {
@@ -76,9 +85,21 @@ body{
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  background-color: #071a2a;
 }
 
+
+
+
+.card.cool {
+  background-color: var(--light-blue2);
+  color: var(--secondary);
+}
+
+
+.card.warm {
+  background-color: var(--primary2);
+  color: var(--secondary);
+}
 
 .card img {
   width: 100%;
@@ -87,24 +108,22 @@ body{
 }
 
 
-.card-tier {
-  font-size: 18px;
-  font-weight: bold;
-  color: #1ad4aa;
+.card-tier.warm, .card-name.warm, .card-origin.warm {
+
+  color: var(--secondary);
+}
+
+.card-tier.cool, .card-name.cool, .card-origin.cool {
+
+  color: var(--primary2);
 }
 
 
-.card-name{
+
+
+.card-tier, .card-name, .card-origin{
   font-size: 18px;
   font-weight: bold;
-  color: #1ad4aa;
-}
-
-.card-origin{
-  font-size: 18px;
-  font-weight: bold;
-  color: #1ad4aa;
-
 }
 
 

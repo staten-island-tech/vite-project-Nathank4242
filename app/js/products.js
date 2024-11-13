@@ -111,7 +111,7 @@ const melee = [
   {
     name: "Donkey Kong",
     game_of_origin: "Donkey Kong",
-    image: "../photos/Melee_donkey.webp",
+    image: "../photos/Melee_Donkey.webp",
     alt_text: "Donkey Kong from Donkey Kong series in Super Smash Bros. Melee",
     tier: "C",
   },

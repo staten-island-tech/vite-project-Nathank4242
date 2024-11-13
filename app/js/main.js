@@ -28,7 +28,7 @@ document.querySelector(".btn").addEventListener("click", function () {
 
 function createCards(characters) {
   const container = document.querySelector(".container");
-  container.innerHTML = ""; // Clear previous cards
+  container.innerHTML = "";
 
   characters.forEach((melee) => {
     const cardHTML = `

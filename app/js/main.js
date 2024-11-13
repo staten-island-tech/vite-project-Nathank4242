@@ -1,28 +1,26 @@
-import { melee } from "./products.js";
-
 document.querySelector(".btn").addEventListener("click", function () {
-  if (document.body.classList.contains("cool")) {
-    document.body.classList.remove("cool");
-    document.body.classList.add("warm");
-  } else {
-    document.body.classList.remove("warm");
-    document.body.classList.add("cool");
-  }
+  // Toggle the theme between cool and warm on the body
+  document.body.classList.toggle("cool");
+  document.body.classList.toggle("warm");
 
-  const cards = document.querySelectorAll(
-    ".card",
-    ".card-name",
-    "card-origin",
-    "card-tier"
-  );
+  // Toggle the theme on the cards and their inner elements
+  const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
-    if (card.classList.contains("cool")) {
-      card.classList.remove("cool");
-      card.classList.add("warm");
-    } else {
-      card.classList.remove("warm");
-      card.classList.add("cool");
-    }
+    card.classList.toggle("cool");
+    card.classList.toggle("warm");
+
+    // Toggle inner elements as well
+    const cardName = card.querySelector(".card-name");
+    const cardOrigin = card.querySelector(".card-origin");
+    const cardTier = card.querySelector(".card-tier");
+
+    if (cardName) cardName.classList.toggle("cool");
+    if (cardOrigin) cardOrigin.classList.toggle("cool");
+    if (cardTier) cardTier.classList.toggle("cool");
+
+    if (cardName) cardName.classList.toggle("warm");
+    if (cardOrigin) cardOrigin.classList.toggle("warm");
+    if (cardTier) cardTier.classList.toggle("warm");
   });
 });
 
@@ -32,13 +30,21 @@ function createCards(characters) {
 
   characters.forEach((melee) => {
     const cardHTML = `
-      <div class="card cool"> 
-        <h2 class="card-name cool">${melee.name}</h2>
+      <div class="card ${
+        document.body.classList.contains("cool") ? "cool" : "warm"
+      }">
+        <h2 class="card-name ${
+          document.body.classList.contains("cool") ? "cool" : "warm"
+        }">${melee.name}</h2>
         <img src="${melee.image || "placeholder-image.jpg"}" alt="${
       melee.alt_text
     }">
-        <h2 class="card-origin cool">Game: ${melee.game_of_origin}</h2>
-        <h2 class="card-tier cool"> Tier: ${melee.tier}</h2>
+        <h2 class="card-origin ${
+          document.body.classList.contains("cool") ? "cool" : "warm"
+        }">Game: ${melee.game_of_origin}</h2>
+        <h2 class="card-tier ${
+          document.body.classList.contains("cool") ? "cool" : "warm"
+        }">Tier: ${melee.tier}</h2>
       </div>
     `;
     container.insertAdjacentHTML("beforeend", cardHTML);
@@ -47,6 +53,7 @@ function createCards(characters) {
 
 createCards(melee);
 
+// Filters (unchanged)
 function filterPokemonCharacters() {
   const pokemonCharacters = melee.filter(
     (character) => character.game_of_origin === "Pokémon"
@@ -59,15 +66,11 @@ document
   .addEventListener("click", filterPokemonCharacters);
 
 function filterMarioCharacters() {
-  const MarioCharacters = [];
-  melee.forEach((character) => {
-    if (
+  const MarioCharacters = melee.filter(
+    (character) =>
       character.game_of_origin === "Super Mario" ||
       character.game_of_origin === "Dr. Mario"
-    ) {
-      MarioCharacters.push(character);
-    }
-  });
+  );
   createCards(MarioCharacters);
 }
 document
@@ -85,23 +88,19 @@ document
   .addEventListener("click", filterFireCharacters);
 
 function filterOtherCharacters() {
-  const OtherCharacters = [];
-  melee.forEach((character) => {
-    if (
-      character.game_of_origin === "Kirby" ||
-      character.game_of_origin === "F-Zero" ||
-      character.game_of_origin === "EarthBound" ||
-      character.game_of_origin === "Donkey Kong" ||
-      character.game_of_origin === "Game & Watch" ||
-      character.game_of_origin === "Ice Climber" ||
-      character.game_of_origin === "Metroid"
-    ) {
-      OtherCharacters.push(character);
-    }
-  });
+  const OtherCharacters = melee.filter((character) =>
+    [
+      "Kirby",
+      "F-Zero",
+      "EarthBound",
+      "Donkey Kong",
+      "Game & Watch",
+      "Ice Climber",
+      "Metroid",
+    ].includes(character.game_of_origin)
+  );
   createCards(OtherCharacters);
 }
-
 document
   .getElementById("filterOtherButton")
   .addEventListener("click", filterOtherCharacters);

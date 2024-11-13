@@ -118,7 +118,7 @@ const melee = [
   {
     name: "Luigi",
     game_of_origin: "Super Mario",
-    image: "../photos/Melee_luigi.png",
+    image: "../photos/Melee_luigi.webp",
     alt_text: "Luigi from Super Mario series in Super Smash Bros. Melee",
     tier: "C",
   },

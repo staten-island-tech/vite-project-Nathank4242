@@ -1,4 +1,4 @@
-const melee = [
+export const melee = [
   {
     name: "Fox",
     game_of_origin: "Star Fox",
@@ -187,5 +187,3 @@ const melee = [
     tier: "A",
   },
 ];
-
-export { melee };

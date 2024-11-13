@@ -1,3 +1,5 @@
+import { melee } from "./products.js";
+
 document.querySelector(".btn").addEventListener("click", function () {
   // Toggle the theme between cool and warm on the body
   document.body.classList.toggle("cool");
@@ -66,11 +68,15 @@ document
   .addEventListener("click", filterPokemonCharacters);
 
 function filterMarioCharacters() {
-  const MarioCharacters = melee.filter(
-    (character) =>
+  const MarioCharacters = melee.reduce((acc, character) => {
+    if (
       character.game_of_origin === "Super Mario" ||
       character.game_of_origin === "Dr. Mario"
-  );
+    ) {
+      acc.push(character); // Add matching character to the accumulator array
+    }
+    return acc;
+  }, []);
   createCards(MarioCharacters);
 }
 document

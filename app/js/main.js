@@ -28,25 +28,17 @@ document.querySelector(".btn").addEventListener("click", function () {
 
 function createCards(characters) {
   const container = document.querySelector(".container");
-  container.innerHTML = "";
+  container.innerHTML = ""; // Clear existing cards
 
   characters.forEach((melee) => {
     const cardHTML = `
-      <div class="card ${
-        document.body.classList.contains("cool") ? "cool" : "warm"
-      }">
-        <h2 class="card-name ${
-          document.body.classList.contains("cool") ? "cool" : "warm"
-        }">${melee.name}</h2>
+      <div class="card">
+        <h2 class="card-name">${melee.name}</h2>
         <img src="${melee.image || "placeholder-image.jpg"}" alt="${
       melee.alt_text
     }">
-        <h2 class="card-origin ${
-          document.body.classList.contains("cool") ? "cool" : "warm"
-        }">Game: ${melee.game_of_origin}</h2>
-        <h2 class="card-tier ${
-          document.body.classList.contains("cool") ? "cool" : "warm"
-        }">Tier: ${melee.tier}</h2>
+        <h2 class="card-origin">Game: ${melee.game_of_origin}</h2>
+        <h2 class="card-tier">Tier: ${melee.tier}</h2>
       </div>
     `;
     container.insertAdjacentHTML("beforeend", cardHTML);

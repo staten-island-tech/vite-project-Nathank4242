@@ -1,17 +1,12 @@
 import { melee } from "./products.js";
 
 document.querySelector(".btn").addEventListener("click", function () {
-  // Toggle the theme between cool and warm on the body
   document.body.classList.toggle("cool");
   document.body.classList.toggle("warm");
-
-  // Toggle the theme on the cards and their inner elements
   const cards = document.querySelectorAll(".card");
   cards.forEach((card) => {
     card.classList.toggle("cool");
     card.classList.toggle("warm");
-
-    // Toggle inner elements as well
     const cardName = card.querySelector(".card-name");
     const cardOrigin = card.querySelector(".card-origin");
     const cardTier = card.querySelector(".card-tier");
@@ -47,7 +42,6 @@ function createCards(characters) {
 
 createCards(melee);
 
-// Filters (unchanged)
 function filterPokemonCharacters() {
   const pokemonCharacters = melee.filter(
     (character) => character.game_of_origin === "Pokémon"
@@ -65,7 +59,7 @@ function filterMarioCharacters() {
       character.game_of_origin === "Super Mario" ||
       character.game_of_origin === "Dr. Mario"
     ) {
-      acc.push(character); // Add matching character to the accumulator array
+      acc.push(character);
     }
     return acc;
   }, []);
